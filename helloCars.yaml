@@ -1,0 +1,62 @@
+openapi: 3.0.3
+info:
+  title: "HelloCars"
+  description: "## This is an API to create and list the cars you have created, free your imagination!"
+  version: "1.0.0"
+externalDocs:
+  description: "Github profile"
+  url: https://github.com/andrezopo/HelloCars
+paths:
+  "/api/hello":
+    get:
+      tags: ["Hello"]
+      summary: Returns a hello message
+      responses:
+        "200":
+          description: Ok, folks
+  "/api/cars":
+    get:
+      tags: ["Posts"]
+      summary: Returns all cars from database
+      responses:
+        "200":
+          description: Thats Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  modelo:
+                    type: string
+                  fabricante:
+                    type: string
+                  dataFabricacao:
+                    type: string
+                  valor:
+                    type: number
+                  anoModelo:
+                    type: integer
+    post:
+      tags: ["Posts"]
+      summary: Creates a new car
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modelo:
+                  type: string
+                fabricante:
+                  type: string
+                dataFabricacao:
+                  type: string
+                valor:
+                  type: number
+                anoModelo:
+                  type: number
+      responses:
+        "201":
+          description: Created!

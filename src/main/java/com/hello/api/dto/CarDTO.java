@@ -1,4 +1,4 @@
-package com.hello.api.hello.dtos;
+package com.hello.api.dto;
 
 public record CarDTO(String modelo, String fabricante, String dataFabricacao, int valor, int anoModelo) {
     
