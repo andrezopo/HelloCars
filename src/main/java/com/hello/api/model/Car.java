@@ -1,5 +1,7 @@
 package com.hello.api.model;
 
+import java.util.Date;
+
 import com.hello.api.dto.CarDTO;
 
 import jakarta.persistence.Column;
@@ -35,8 +37,8 @@ public class Car {
     @Column(length = 50, nullable = false)
     private String fabricante;
 
-    @Column(length = 50, nullable = false)
-    private String dataFabricacao;
+    @Column(nullable = false)
+    private Date dataFabricacao;
 
     @Column(nullable = false)
     private int valor;
